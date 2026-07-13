@@ -1,0 +1,9 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock
+.DS_Store
+
+# Résumé PDF: kept locally, never published (contains phone number)
+*.pdf

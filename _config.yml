@@ -1,0 +1,33 @@
+title: Danwei Cai
+tagline: Software Engineer
+description: >-
+  Danwei Cai — software engineer in Seattle focused on cloud infrastructure and
+  backend systems (Terraform, GCP, Java, Python). Open to new-grad software
+  engineer roles and internships.
+url: https://danweicai.github.io
+baseurl: ""
+lang: en
+
+author:
+  name: Danwei Cai
+  email: cai.da@northeastern.edu
+
+profile:
+  location: Seattle, WA
+  email: cai.da@northeastern.edu
+  github: https://github.com/DanweiCai
+  linkedin: https://www.linkedin.com/in/danwei-cai/
+
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - "*.pdf"
+
+sass:
+  style: compressed

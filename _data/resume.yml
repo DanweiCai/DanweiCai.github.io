@@ -1,0 +1,134 @@
+headline: Software engineer focused on cloud infrastructure and backend systems.
+intro: >-
+  I work closest to the infrastructure layer. I provisioned a full GCP environment
+  entirely as Terraform code — a custom VPC, autoscaling instance groups behind a
+  load balancer, a highly available MySQL database, and a CI/CD pipeline that tests
+  and ships every merge — then built the REST API that runs on top of it.
+
+# The job-search pitch, right under the intro in the hero.
+pitch: >-
+  I graduate from Northeastern in December 2026 and I'm looking for a full-time
+  new-grad software engineering role or an internship — cloud infrastructure,
+  backend, or platform work.
+
+# The status line in the hero. Delete this one line when your search ends and the
+# badge disappears.
+availability: Available for interviews now
+
+contact_lede: The fastest way to reach me is email.
+
+chips:
+  - Terraform
+  - GCP
+  - Java
+  - Python
+  - Flutter
+
+projects:
+  - title: GCP Infrastructure Automatic Manager
+    subtitle: Web application and end-to-end cloud infrastructure
+    date: Jan – Apr 2025
+    featured: true
+    summary: >-
+      A RESTful web application deployed on a production-grade GCP environment
+      that I designed and provisioned entirely as code — custom VPC, autoscaling
+      instance groups, a load balancer on my own domain, and a CI/CD pipeline
+      gating every merge.
+    stack:
+      - Terraform
+      - Packer
+      - GCP
+      - MySQL
+      - GitHub Actions
+      - Pub/Sub
+    groups:
+      - name: Web application & REST APIs
+        points:
+          - Built RESTful APIs for user creation with email verification and
+            authenticated info fetching using basic auth, backed by database
+            health checks.
+          - Integrated Mailchimp for email verification, triggering a Cloud
+            Function through GCP Pub/Sub whenever a new user signs up.
+          - Instrumented every step of each API call with structured logging,
+            shipping logs to GCP Logging Explorer for monitoring and analysis.
+      - name: Infrastructure as code
+        points:
+          - Provisioned a custom VPC with dedicated subnets for the application
+            and database tiers, using private IP access and internet gateway
+            routing.
+          - Hardened the environment with Compute Engine firewall rules and Cloud
+            KMS encryption, and deployed a highly available MySQL database with
+            automated backups.
+          - Built VM instance templates and managed instance groups with
+            autoscaling policies, fronted by a load balancer with Cloud DNS and
+            SSL on a custom domain.
+      - name: CI/CD pipeline
+        points:
+          - Set up GitHub Actions to run integration and unit tests on every pull
+            request, plus Packer status checks.
+          - Automated machine image creation on merge and rolling deployment of
+            new images to instance groups through Terraform, with database
+            credentials injected at deploy time.
+
+  - title: Pizza Restaurant Delivery App
+    subtitle: Cross-platform mobile ordering
+    date: Jan – Apr 2024
+    featured: false
+    summary: >-
+      A Flutter and Firebase mobile app for ordering pizza, from account creation
+      through cart, payment, and a live order receipt.
+    stack:
+      - Flutter
+      - Dart
+      - Firebase
+    points:
+      - Built a delivery app with email-authenticated account creation and a full
+        menu of pizzas, salads, sides, and drinks, with shopping cart management
+        and credit card payment.
+      - Used Firebase for data storage to drive real-time order updates, user data
+        management, and generated receipts summarizing each order.
+
+  - title: 2048
+    subtitle: Sliding block puzzle game
+    date: Jan – Apr 2023
+    featured: false
+    summary: >-
+      A desktop build of the classic single-player sliding block puzzle, written
+      from scratch in Java.
+    stack:
+      - Java
+      - Swing
+    points:
+      - Implemented the full game logic — tile merging, move validation, scoring,
+        and win/lose detection — in Java.
+      - Built the interactive graphical interface with Java Swing.
+
+experience:
+  - role: Software Engineer Intern
+    company: IpserLab Startup
+    location: Mountain View, CA
+    date: Sep – Dec 2024
+    points:
+      - Developed an internal back-end service using Java, JDBC, and PostgreSQL,
+        with a React front end.
+
+skills:
+  - name: Languages
+    items: [Java, Python, C++, JavaScript, Dart, HTML, CSS]
+  - name: Infrastructure
+    items: [Terraform, Packer, GitHub Actions, GCP, AWS]
+  - name: Databases
+    items: [MySQL, PostgreSQL, MongoDB, DynamoDB]
+
+education:
+  school: Northeastern University
+  location: Seattle, WA
+  degree: Master of Science, Information Systems
+  date: Sep 2022 – Dec 2026 (expected)
+  gpa: "3.8 / 4.0"
+  coursework:
+    - Data Structures and Algorithms
+    - Database Design
+    - Web Design and User Experience Engineering
+    - Smartphone-Based Web Development
+    - Network Structures and Cloud Computing

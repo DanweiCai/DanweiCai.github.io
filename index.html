@@ -1,0 +1,189 @@
+---
+layout: default
+---
+
+{% assign r = site.data.resume %}
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal">{{ site.profile.location }}</p>
+    <h1 class="reveal">{{ site.author.name }}</h1>
+    <p class="headline reveal">{{ r.headline }}</p>
+    <p class="intro reveal">{{ r.intro }}</p>
+
+    {% if r.pitch %}
+    <p class="pitch reveal">{{ r.pitch }}</p>
+    {% endif %}
+
+    {% if r.availability %}
+    <p class="status reveal">
+      <span class="status-dot" aria-hidden="true"></span>
+      {{ r.availability | escape }}
+    </p>
+    {% endif %}
+
+    <ul class="chips reveal" aria-label="Core technologies">
+      {% for chip in r.chips %}
+      <li class="chip chip-lg">{{ chip | escape }}</li>
+      {% endfor %}
+    </ul>
+
+    <nav class="links reveal" aria-label="Profiles and contact">
+      <a class="link-btn link-btn-primary" href="mailto:{{ site.profile.email }}">
+        {{ site.profile.email }}
+      </a>
+      <a class="link-btn" href="{{ site.profile.github }}" rel="me noopener" target="_blank">GitHub</a>
+      <a class="link-btn" href="{{ site.profile.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="education" aria-labelledby="education-title">
+  <div class="wrap">
+    <h2 class="section-title reveal" id="education-title">
+      <span class="section-num">01</span> Education
+    </h2>
+
+    {% assign ed = r.education %}
+    <article class="row reveal">
+      <div class="row-meta">
+        <p class="row-date">{{ ed.date | escape }}</p>
+      </div>
+      <div class="row-body">
+        <h3 class="row-title">{{ ed.degree | escape }}</h3>
+        <p class="row-org">
+          {{ ed.school | escape }} · {{ ed.location | escape }} · GPA {{ ed.gpa | escape }}
+        </p>
+        <ul class="chips">
+          {% for course in ed.coursework %}
+          <li class="chip">{{ course | escape }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <h2 class="section-title reveal" id="work-title">
+      <span class="section-num">02</span> Selected work
+    </h2>
+
+    {% for p in r.projects %}
+    <article class="card reveal {% if p.featured %}card-featured{% endif %}">
+      {% if p.featured %}<p class="badge">Flagship project</p>{% endif %}
+
+      <header class="card-head">
+        <div>
+          <h3 class="card-title">{{ p.title | escape }}</h3>
+          <p class="card-subtitle">{{ p.subtitle | escape }}</p>
+        </div>
+        <p class="card-date">{{ p.date | escape }}</p>
+      </header>
+
+      <p class="card-summary">{{ p.summary | escape }}</p>
+
+      {% if p.stack %}
+      <ul class="chips" aria-label="Technologies used">
+        {% for t in p.stack %}
+        <li class="chip">{{ t | escape }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <details class="details">
+        <summary class="details-summary">
+          <span class="details-label-more">Read the details</span>
+          <span class="details-label-less">Hide the details</span>
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9.5 12 15.5 18 9.5" />
+          </svg>
+        </summary>
+
+        <div class="details-body">
+          {% if p.groups %} {% for g in p.groups %}
+          <div class="group">
+            <h4 class="group-title">{{ g.name | escape }}</h4>
+            <ul class="points">
+              {% for point in g.points %}
+              <li>{{ point | escape }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %} {% else %}
+          <ul class="points">
+            {% for point in p.points %}
+            <li>{{ point | escape }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </details>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="wrap">
+    <h2 class="section-title reveal" id="experience-title">
+      <span class="section-num">03</span> Experience
+    </h2>
+
+    {% for job in r.experience %}
+    <article class="row reveal">
+      <div class="row-meta">
+        <p class="row-date">{{ job.date | escape }}</p>
+      </div>
+      <div class="row-body">
+        <h3 class="row-title">{{ job.role | escape }}</h3>
+        <p class="row-org">{{ job.company | escape }} · {{ job.location | escape }}</p>
+        <ul class="points">
+          {% for point in job.points %}
+          <li>{{ point | escape }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <h2 class="section-title reveal" id="skills-title">
+      <span class="section-num">04</span> Skills
+    </h2>
+
+    <div class="skills-grid">
+      {% for group in r.skills %}
+      <div class="skill-group reveal">
+        <h3 class="skill-name">{{ group.name | escape }}</h3>
+        <ul class="chips">
+          {% for item in group.items %}
+          <li class="chip">{{ item | escape }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 class="section-title reveal" id="contact-title">
+      <span class="section-num">05</span> Contact
+    </h2>
+
+    <div class="contact reveal">
+      <p class="contact-lede">{{ r.contact_lede | escape }}</p>
+      <a class="contact-email" href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
+      <nav class="links" aria-label="Profiles">
+        <a class="link-btn" href="{{ site.profile.github }}" rel="me noopener" target="_blank">GitHub</a>
+        <a class="link-btn" href="{{ site.profile.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
+      </nav>
+    </div>
+  </div>
+</section>
