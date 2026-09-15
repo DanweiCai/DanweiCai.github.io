@@ -9,7 +9,9 @@ layout: default
     <p class="eyebrow reveal">{{ site.profile.location }}</p>
     <h1 class="reveal">{{ site.author.name }}</h1>
     <p class="headline reveal">{{ r.headline }}</p>
+    {% if r.intro %}
     <p class="intro reveal">{{ r.intro }}</p>
+    {% endif %}
 
     {% if r.pitch %}
     <p class="pitch reveal">{{ r.pitch }}</p>

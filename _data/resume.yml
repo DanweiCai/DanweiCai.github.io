@@ -1,11 +1,6 @@
-headline: Software engineer focused on cloud infrastructure and backend systems.
-intro: >-
-  I work closest to the infrastructure layer. I provisioned a full GCP environment
-  entirely as Terraform code — a custom VPC, autoscaling instance groups behind a
-  load balancer, a highly available MySQL database, and a CI/CD pipeline that tests
-  and ships every merge — then built the REST API that runs on top of it.
+headline: New-grad software engineer focused on cloud infrastructure and backend systems.
 
-# The job-search pitch, right under the intro in the hero.
+# The job-search pitch, right under the headline in the hero.
 pitch: >-
   I graduate from Northeastern in December 2026 and I'm looking for a full-time
   new-grad software engineering role or an internship — cloud infrastructure,
@@ -18,11 +13,11 @@ availability: Available for interviews now
 contact_lede: The fastest way to reach me is email.
 
 chips:
+  - Agentic AI
   - Terraform
   - GCP
   - Java
   - Python
-  - Flutter
 
 projects:
   - title: Job Search Copilot
@@ -150,10 +145,12 @@ experience:
         with a React front end.
 
 skills:
+  - name: AI & agents
+    items: [Agentic AI development, Agent Skills, Claude Code, Codex, Prompt and instruction design]
   - name: Languages
     items: [Java, Python, C++, JavaScript, Dart, HTML, CSS]
-  - name: Infrastructure
-    items: [Terraform, Packer, GitHub Actions, GCP, AWS]
+  - name: Infrastructure & tooling
+    items: [Terraform, Packer, GitHub Actions, GCP, AWS, Pytest]
   - name: Databases
     items: [MySQL, PostgreSQL, MongoDB, DynamoDB]
 
