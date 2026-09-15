@@ -72,7 +72,9 @@ layout: default
 
     {% for p in r.projects %}
     <article class="card reveal {% if p.featured %}card-featured{% endif %}">
-      {% if p.featured %}<p class="badge">Flagship project</p>{% endif %}
+      {% if p.badge or p.featured %}
+      <p class="badge">{{ p.badge | default: 'Flagship project' | escape }}</p>
+      {% endif %}
 
       <header class="card-head">
         <div>
@@ -90,6 +92,19 @@ layout: default
         <li class="chip">{{ t | escape }}</li>
         {% endfor %}
       </ul>
+      {% endif %}
+
+      {% if p.links %}
+      <nav class="card-links" aria-label="Links for {{ p.title | escape }}">
+        {% for l in p.links %}
+        <a class="link-btn link-btn-sm" href="{{ l.url }}" rel="noopener" target="_blank">
+          {{ l.label | escape }}
+          <svg class="ext-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+        {% endfor %}
+      </nav>
       {% endif %}
 
       <details class="details">

@@ -25,6 +25,43 @@ chips:
   - Flutter
 
 projects:
+  - title: Job Search Copilot
+    subtitle: Open-source agent skill for Codex and Claude Code
+    date: Sep 2026
+    featured: true
+    badge: Open-source agent skill
+    summary: >-
+      An installable agent skill that turns Codex or Claude Code into a job-search
+      copilot — live role discovery, fit scoring, truthful resume tailoring,
+      application review, submission verification, and tracking — running
+      local-first with a human approving every step.
+    stack:
+      - Python
+      - Claude Code
+      - Codex
+      - Agent Skills
+      - Pytest
+    links:
+      - label: View the repository
+        url: https://github.com/DanweiCai/job-search-copilot
+    groups:
+      - name: Workflow
+        points:
+          - Published a local-first, human-approved workflow for Codex and Claude
+            Code that supports live-role discovery, fit scoring, truthful resume
+            tailoring, application review, submission verification, and job-search
+            tracking.
+      - name: Candidate safety
+        points:
+          - Designed candidate-safety controls that keep files in a private
+            workspace, require fresh approval before each submission, and avoid
+            inferring sensitive or legal application answers.
+      - name: Tooling & release
+        points:
+          - Implemented Python helpers and offline tests for workspace
+            initialization, record validation, a standalone searchable dashboard,
+            and deterministic release packaging.
+
   - title: GCP Infrastructure Automatic Manager
     subtitle: Web application and end-to-end cloud infrastructure
     date: Jan – Apr 2025
